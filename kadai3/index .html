@@ -10,23 +10,19 @@
         body{
             margin: 0;
         }
-        #title{
-            padding-left:710px;
-            width:200px;
+        .header_title{
+            text-align: center;
         }
-        nav{
-            width:1140px;
-            height:80px;
-            border-top:solid 0.1px gray;
-            border-bottom:solid 0.1px gray;
-            padding-left:240px;
-            padding-right:240px;
+        .header_navlist{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
         }
-        nav ul{list-style-type:none;}
-        nav li{
-            width:150px;
-            height:50px;
-            float:left;
+        .header_navlist li{
+            margin: 16px 28px;
+            list-style: none;
         }
         nav a{
             display:block;
@@ -35,60 +31,36 @@
             color:black;
             text-decoration:none;
         }
-        #head{
-            width:1540px;
-            height:450px;
-            padding-top:40px;
-            padding-left:40px;
-            padding-right:40px;
+        .header_mainvisual{
+            margin: 40px;
         }
-        #middle{
-            font-family: serif;
+        .header_mainvisual img{
+            width: 100%;
+            border: 10px solid #ddd;
+            box-sizing: border-box;
+        }
+        main{
+            margin: 0;
+        }
+        .main_content h2{
+            font-family:serif;
             font-weight: normal;
-            width:1540px;
-            padding:40px;
-            text-align:center;
+            text-align: center;
         }
-        .content{
+        .main_content_body{
+            text-align: center;
+        }
+        .main_goodpoints{
             display: flex;
             justify-content: space-between;
-            width:1700px;
         }
-        #room{
-            width:500px;
-            height:250px;
-            padding-left:40px;
+        .main_goodpoints section{
+            width: 31%;
         }
-        #bed{
-            width:500px;
-            height:250px;
-            padding-left:20px;
-            padding-right:20px;
+        .main_goodpoints img{
+            width: 100%;
         }
-        #eal{
-            width:500px;
-            height:250px;
-            padding-right:40px;
-        }
-        .coment{
-            display: flex;
-            justify-content: space-around;
-            width:1700px;
-        }
-        #rooms{
-            clear:both;
-            width:500px;
-            padding-left:40px;
-        }
-        #beds{
-            width:500px;
-            padding-left:20px;
-            padding-right:20px;
-        }
-        #eals{
-            width:500px;
-            padding-right:40px;
-        }
+
         footer{
             display: flex;
             justify-content: space-between;
@@ -129,9 +101,11 @@
     </style>
 <body>
     <header>
-        <img src="image/hotel title.jpeg" alt="ホテルのタイトル" id="title">
+        <div class="header_title">
+            <img src="image/hotel title.jpeg" alt="ホテルのタイトル">
+        </div>
         <nav>
-            <ul>
+            <ul class="header_navlist">
                 <li><a href="#">HOME</a></li>
                 <li><a href="index.html">COMCEPT</a></li>
                 <li><a href="#">STAY</a></li>
@@ -141,34 +115,32 @@
                 <li><a href="#">DOWNLOAD</a></li>
             </ul>
         </nav>
-        <img src="image/hotel head.jpg" alt="ホテルのヘッダー画像" id="head">
+        <div class="header_mainvisual">
+            <img src="image/hotel head.jpg" alt="ホテルのヘッダー画像">
+        </div>
     </header>
     <main>
-        <div id="middle">
+        <article class="main_content">
            <h2>Stay in a Stylish and Luxurious Design Space.</h2>
-           <p>The Scenery and Location Are Perfect, and the food is Exellent, This Resort Hotel is Dedicated to the Enjoyment of Nuture's Bountyand the Pursult of Fine Cuuisine.</p>
-        </div>
-        <div class="content">
-            <img src="image/hotel room.jpg" alt="ホテルの部屋画像" id="room">
-            <img src="image/hotel bed.jpg" alt="ホテルのベッド画像" id="bed">
-            <img src="image/hotel eal.jpg" alt="ホテルの食事画像" id="eal">
-        </div>
-        <div class="coment">
-            <div id="rooms">
-                <h2>Concept</h2>
-                <p>Stay in a stylish and luxurious design space.</p>
+           <p class="main_content_body">The Scenery and Location Are Perfect, and the food is Exellent, This Resort Hotel is Dedicated to the Enjoyment of Nuture's Bountyand the Pursult of Fine Cuuisine.</p>
+            <div class="main_goodpoints">
+                <section>
+                    <img src="image/hotel room.jpg" alt="ホテルの部屋画像">
+                    <h2>Concept</h2>
+                    <p>Stay in a stylish and luxurious design space.</p>
+                </section>
+                <section>
+                    <img src="image/hotel bed.jpg" alt="ホテルのベッド画像">
+                    <h2>Hospitality</h2>
+                    <p>A true resort life, where the richness of nature heals both body and soul.</p>
+                </section>
+                <section>
+                    <img src="image/hotel eal.jpg" alt="ホテルの食事画像">
+                    <h2>Restaurant</h2>
+                    <p>The hotel is dedcated to the enjoyment of nature's bounty and the pursult of gastronomy.</p>
+                </section>
             </div>
-            <div id="beds">
-                <h2>Hospitality</h2>
-                <p>A true resort life, where the richness of nature heals both body<br>
-                and soul.</p>
-            </div>
-            <div id="eals">
-                <h2>Restaurant</h2>
-                <p>The hotel is dedcated to the enjoyment of nature's bounty and <br>
-                the pursult of gastronomy.</p>
-            </div>
-        </div>
+        </article>
     </main>
     <footer>
         <div class="news">
