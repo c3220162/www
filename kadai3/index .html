@@ -86,22 +86,22 @@
             padding-right:40px;
             float:left;
         }
+        footer{
+            display: flex;
+            justify-content: space-between;
+            margin: 40px 40px 0;
+        }
         .news{
-            clear:both;
-            float:left;
             width: 50%;
             padding-left:40px;
-            margin-right: 3.5%;
+        }
+        .news_title{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
         }
         .news h2{
             margin: 0;
-        }
-        .news_older{
-            float:right;
-            margin-top: 12px;
-            font-weight: normal;
-            font-size: 14px;
-            color: #777;
         }
         .news_list{
             list-style: none;
@@ -117,7 +117,6 @@
             margin-right: 30px;
         }
         .banner{
-            float: left;
             width: 31%;
         }
         .banner img{
@@ -169,15 +168,17 @@
         </div>
     </main>
     <footer>
-        <article class="news">
-            <h2>News Information <span class="news_order">Older News</span></h2>
-
+        <div class="news">
+            <div class="news_title">
+                <h2>News Information</h2>
+                <span>Older News</span>
+            </div>
             <ul class="news_list">
                 <li><span class="news_date">2020.12.18</span><span class="news_text">Update information on "LUXE(tcd022)"</span></li>
                 <li><span class="news_date">2020.09.18</span><span class="news_text">Custom post type "Announcement" is available</span></li>
                 <li><span class="news_date">2020.08.12</span><span class="news_text">WordPress theme "LUXE(tcd022) is released"</span></li>         
             </ul>
-        </article>
+        </div>
 
         <div class="banner">
             <img src="image/banner.jpeg" alt="banner">
