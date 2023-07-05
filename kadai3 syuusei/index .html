@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hotel resorts</title>
+</head>
+    <style>
+        body{
+            margin: 0;
+        }
+        .header_title{
+            text-align: center;
+        }
+        .header_navlist{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+        }
+        .header_navlist li{
+            margin: 16px 28px;
+            list-style: none;
+        }
+        nav a{
+            display:block;
+            line-height:50px;
+            text-align:center;
+            color:black;
+            text-decoration:none;
+        }
+        .header_mainvisual{
+            margin: 40px;
+        }
+        .header_mainvisual img{
+            width: 100%;
+            border: 10px solid #ddd;
+            box-sizing: border-box;
+        }
+        main{
+            margin: 0 40px;
+        }
+        .main_content h2{
+            font-family: serif;
+            font-weight: normal;
+            text-align: center;
+        }
+        .main_content_body{
+            text-align: center;
+        }
+        .main_goodpoints{
+            display: flex;
+            justify-content: space-between;
+        }
+        .main_goodpoints section{
+            width: 31%;
+        }
+        .main_goodpoints img{
+            width: 100%;
+        }
+
+        footer{
+            display: flex;
+            justify-content: space-between;
+            margin: 40px 40px 0;
+        }
+        .news{
+            width: 65.5%;
+        }
+        .news_title{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        .news h2{
+            margin: 0;
+        }
+        .news_list{
+            list-style: none;
+            padding: 0;
+            border-top: 1px dotted #000;
+        }
+        .news_list li{
+            border-bottom: 1px dotted #000;
+            padding: 12px 0;
+        }
+        .news_date{
+            font-weight: bold;
+            margin-right: 30px;
+        }
+        .banner{
+            width: 31%;
+        }
+        .banner img{
+            width: 100%;
+        }
+
+    </style>
+<body>
+    <header>
+        <div class="header_title">
+            <img src="image/hotel title.jpeg" alt="ホテルのタイトル">
+        </div>
+        <nav>
+            <ul class="header_navlist">
+                <li><a href="#">HOME</a></li>
+                <li><a href="index.html">COMCEPT</a></li>
+                <li><a href="#">STAY</a></li>
+                <li><a href="#">PAGE SAMPLE</a></li>
+                <li><a href="#">BLOG</a></li>
+                <li><a href="#">CONTACT</a></li>
+                <li><a href="#">DOWNLOAD</a></li>
+            </ul>
+        </nav>
+        <div class="header_mainvisual">
+            <img src="image/hotel head.jpg" alt="ホテルのヘッダー画像">
+        </div>
+    </header>
+    <main>
+        <article class="main_content">
+           <h2>Stay in a Stylish and Luxurious Design Space.</h2>
+           <p class="main_content_body">The Scenery and Location Are Perfect, and the food is Exellent, This Resort Hotel is Dedicated to the Enjoyment of Nuture's Bountyand the Pursult of Fine Cuuisine.</p>
+            <div class="main_goodpoints">
+                <section>
+                    <img src="image/hotel room.jpg" alt="ホテルの部屋画像">
+                    <h3>Concept</h3>
+                    <p>Stay in a stylish and luxurious design space.</p>
+                </section>
+                <section>
+                    <img src="image/hotel bed.jpg" alt="ホテルのベッド画像">
+                    <h3>Hospitality</h3>
+                    <p>A true resort life, where the richness of nature heals both body and soul.</p>
+                </section>
+                <section>
+                    <img src="image/hotel eal.jpg" alt="ホテルの食事画像">
+                    <h3>Restaurant</h3>
+                    <p>The hotel is dedcated to the enjoyment of nature's bounty and the pursult of gastronomy.</p>
+                </section>
+            </div>
+        </article>
+    </main>
+    <footer>
+        <div class="news">
+            <div class="news_title">
+                <h2>News Information</h2>
+                <span>Older News</span>
+            </div>
+            <ul class="news_list">
+                <li><span class="news_date">2020.12.18</span><span class="news_text">Update information on "LUXE(tcd022)"</span></li>
+                <li><span class="news_date">2020.09.18</span><span class="news_text">Custom post type "Announcement" is available</span></li>
+                <li><span class="news_date">2020.08.12</span><span class="news_text">WordPress theme "LUXE(tcd022) is released"</span></li>         
+            </ul>
+        </div>
+
+        <div class="banner">
+            <img src="image/banner.jpeg" alt="banner">
+        </div>
+    </footer>
+</body>
+</html>
