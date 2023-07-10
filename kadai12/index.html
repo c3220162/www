@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>吹き出しのような見出し</title> 
+</head>
+<style>
+    h1.q2{
+        position: relative;
+        border: 3px solid #333;
+        font-weight: bold;
+        font-size: 26px;
+    }
+    h1.q2::before,
+    h1.q2::after{
+        position: absolute;
+        top: 100%;
+        left: 30px;
+        height: 0;
+        width: 0;
+        border: solid transparent;
+        content: "";
+    }
+    h1.q2::before{
+        margin-left: -12px;
+        border-color: transparent;
+        border-top-color: #333;
+        border-width: 12px;
+    }
+    h1.q2::after{
+        margin-left: -8px;
+        border-color: transparent;
+        border-top-color: white;
+        border-width: 8px;
+    }
+    body{
+        background-color: #fff;
+        color: #666;
+        font-family: "メイリオ",Meiryo,"ＭＳ Ｐゴシック","MS PGothic","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",Osaka,sans-serif;
+    }
+    h1{
+        font-family: "M PLUS 1p",sans-serif;
+        color: #333;
+        font-size: 1.5rem;
+        line-height: 1.25;
+    }
+    h1.q2{
+        height: 2.75rem;
+        line-height: 2.75rem;
+        background-color: #5bdb9e;
+        color: #fff;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+</style>
+<body>
+    <h1 class="q2">吹き出しのような見出し</h1>
+</body>
+</html>
