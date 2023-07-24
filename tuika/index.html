@@ -101,6 +101,34 @@
     p{
         width:50%;
     }
+    .p1{
+	position: relative;
+	display: inline-block;
+	padding: 0 0 0 16px;
+	color: #000;
+	vertical-align: middle;
+	text-decoration: none;
+	font-size: 15px;
+    }
+    .p1::before,
+    .p1::after{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	content: "";
+	vertical-align: middle;
+    }
+    p.p1::before{
+	left: 3px;
+	width: 4px;
+	height: 4px;
+	border-top: 2px solid #7a0;
+	border-right: 2px solid #7a0;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+    }
 </style>
 <body>
     <table border="1" bordercolor="gainsboro" width="100%">
@@ -141,6 +169,7 @@
             <img src="image/kinki.jpeg" alt="禁忌の獄画まとめ">
         </div>
         <h4>禁忌の獄攻略まとめはこちら</h4>
+        <p class="p1">7月の深淵開催ステージ</p>
     </main>
 </body>
 </html>
