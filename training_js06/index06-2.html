@@ -15,7 +15,7 @@
 </style>
 <body>
     <h1>座席の予約</h1>
-    <p>東京会場<p id="yoyaku">（予約受付中）</p></p>
+    <p>東京会場<span id="yoyaku">（予約受付中）</span></p>
     <button id="bt" onclick="showAnser();">予約する</button>
 
     <script>
@@ -23,7 +23,7 @@
             let anserBox = document.getElementById('yoyaku');
             anserBox.textContent = '（予約済み）'
             let changeBox = document.getElementById('bt');
-            changeBox.innerHTML = '<button id="aa">ありがとうございました。<button>'
+            changeBox.innerHTML = '<button>ありがとうございました。<button>'
         }
     </script>
 </body>
