@@ -14,8 +14,9 @@
 <body>
     <h1>座席の予約</h1>
     <p>東京会場<span id="yoyaku">（予約受付中）</span></p>
-    <div id="bt"> <button onclick="showAnser();">予約する</button></div>
-
+    <div id="bt">
+         <button onclick="showAnser();">予約する</button>
+    </div>
     <script>
         function showAnser(){
             document.getElementById('yoyaku').textContent = '（予約済み）'
