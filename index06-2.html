@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>要素の取得と内容の変更</title>
+</head>
+<style>
+    #yoyaku{
+        color:red;
+    }
+</style>
+<body>
+    <h1>座席の予約</h1>
+    <p>東京会場</p><div id="yoyaku">（予約受付中）</div>
+    <button onclick="showAnser();">予約する</button>
+
+    <script>
+        function showAnser(){
+            let anserBox = document.getElementByID('yoyaku');
+            anserBox.textContent = '（予約済み）'
+        }
+    </script>
+</body>
+</html>
