@@ -13,12 +13,14 @@
 <body>
     <h1>座席の予約</h1>
     <p>東京会場<div id="yoyaku">（予約受付中）</div></p>
-    <button onclick="showAnser();">予約する</button>
+    <button id="bt" onclick="showAnser();">予約する</button>
 
     <script>
         function showAnser(){
             let anserBox = document.getElementById('yoyaku');
             anserBox.textContent = '（予約済み）'
+            let changeBox = document.getElementById('bt');
+            changeBox.innerHTML = '<p>ありがとうございました。</p>'
         }
     </script>
 </body>
