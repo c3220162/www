@@ -3,9 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>複数の要素の取得</title>
 </head>
 <body>
-    
+    <h1>人口の多い国ランキング</h1>
+    <div id="kuni">
+        <li>中国</li>
+        <li>インド</li>
+        <li>アメリカ</li>
+        <li>インドネシア</li>
+    </div>
+    <button onclick="showKokki()">国旗を表示</button>
+
+    <script>
+        let kuni = document.querySelectorAll('#kuni li');
+        function showKokki(){
+            kuni[0].innerHTML = '<li><img src="IMG_0452.png"></li>';
+            kuni[1].innerHTML = '<li><img src="IMG_0453.png"></li>';
+            kuni[2].innerHTML = '<li><img src="IMG_0454.png"></li>';
+            kuni[3].innerHTML = '<li><img src="IMG_0455.png"></li>';
+        }
+    </script>
 </body>
 </html>
