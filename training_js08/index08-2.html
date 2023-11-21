@@ -9,7 +9,7 @@
     <h1>写真の一覧</h1>
     <p>以下のボタンをクリックすると、写真一覧表示されます。</p>
     <div id="photo">
-        <button onclick="showPhoto()">写真を表示</button>
+        <button id="saku" onclick="showPhoto()">写真を表示</button>
     </div>
 
     <script>
@@ -18,6 +18,7 @@
             syasin.insertAdjacentHTML('beforeend','<img src=Photo/IMG_0456.jpeg><img src=Photo/IMG_0457.jpeg><img src=Photo/IMG_0458.jpeg>');
             syasin.insertAdjacentHTML('beforeend','<img src=Photo/IMG_0459.jpeg><img src=Photo/IMG_0460.jpeg><img src=Photo/IMG_0461.jpeg>');
             syasin.insertAdjacentHTML('beforeend','<img src=Photo/IMG_0462.jpeg><img src=Photo/IMG_0463.jpeg>');
+            document.getElementById('saku').remove();
         }
     </script>
 </body>
