@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>要素の追加と削除</title>
+</head>
+<style>
+    body{
+        width: 650px;
+    }
+    img{
+        width:200px;
+        padding-top:10px;
+    }
+</style>
+<body>
+    <h1>写真の一覧</h1>
+    <p>以下のボタンをクリックすると、写真一覧表示されます。</p>
+    <div id="photo">
+        <button id="saku" onclick="showPhoto()">写真を表示</button>
+    </div>
+
+    <script>
+        function showPhoto(){
+            let syasin = document.getElementById('photo')
+            syasin.insertAdjacentHTML('beforeend','<img src=Photo/IMG_0456.jpeg><img src=Photo/IMG_0457.jpeg><img src=Photo/IMG_0458.jpeg><img src=Photo/IMG_0459.jpeg><img src=Photo/IMG_0460.jpeg><img src=Photo/IMG_0461.jpeg><img src=Photo/IMG_0462.jpeg><img src=Photo/IMG_0463.jpeg>');
+            document.getElementById('saku').remove();
+        }
+    </script>
+</body>
+</html>
