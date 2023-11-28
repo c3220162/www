@@ -28,12 +28,24 @@
 
     <script>
         let list = ['大人','高校生','中学生','小学生']
+        let lists = [800,680,450,380]
         function createTable(){
             let row = '<tr><th></th>';
             for(let j = 0; j<=3; j++){
                 row = row + '<th>' + list[j] + '</th>';
             }
+            row = row + '</tr>';
+            document.getElementById('t_head').insertAdjacentHTML('beforeend',row)
+
+            for(let i = 1; i <= 5; i++){
+                let row = '<tr><th>' + i + '人'+ '</th>';
+                for(let j = 0; j <= 3; j++){
+                row = row + '<td>' + lists[j]*i + '円'+ '</td>';
+            }
+            row = row + '</tr>';
+            document.getElementById('t_body').insertAdjacentHTML('beforeend',row);
         }
+    }
     </script>
 
 </body>
