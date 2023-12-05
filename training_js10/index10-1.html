@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>条件分岐</title>
+</head>
+<body>
+    <h3>問題</h3>
+    <p>最も面積が大きい「県」は何県でしょう？</p>
+    <button id="change" onclick="showH()">ヒントを見る</button>
+    <div id="message">
+      <p>（注意）北海道は「県」ではありません。</p>
+    </div>
+
+    <script>
+        let click = 0;
+        function showH(){
+            click++;
+            switch(click){
+                case 1:
+                    document.getElementById('message').textContent = '東北地方にあります。'
+                    document.getElementById('change').textContent = '答えを見る'
+                break;
+                default:
+                    document.getElementById('message').textContent = '答えは「岩手県」です。'
+            }
+        }
+    </script>
+</body>
+</html>
