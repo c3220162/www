@@ -23,8 +23,10 @@
         function show(){
         let anser = [];
         let count = 0;
+        let k = 0;
         for(let x = 1; x<=999; x++){
-            if (x*x*x-53*x*x+620*x-1036<=0){
+            k = x*x*x-53*x*x+620*x-1036
+            if (k==0){
                 anser[count]=x;
                 count=count+1; 
             }
