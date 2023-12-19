@@ -22,22 +22,22 @@
 
 <script>
     function Show(){
-        let syu = 1;
-        let num = 10;
-        while(syu=1){
-            num++;
-            let suu = count(num);
-            document.getElementById('message').textContent = '答えは'+num+'です。'
-        }
-        function count(num){
-            for(let i=1; i<=10; i++){
-                if(num%i != 0){
-                    return false;
-                }
+        let num = 0;
+        for(let i=10; i<=10000; i++){
+            let flag = count(i);
+            if(flag){
+                num=i;
             }
-            syu=syu+1
-            return num;
         }
+        document.getElementById('message').textContent = '答えは'+num+'です。'
+        }
+    function count(i){
+        for(let j=1; j<= 10; j++){
+            if(i%j != 0){
+                return false;
+            }
+        }
+        return true;
     }
 </script>
 </body>
