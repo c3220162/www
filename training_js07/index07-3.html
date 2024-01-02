@@ -6,61 +6,11 @@
     <title>電卓</title>
 </head>
     <h3>簡易電卓</h3>
-    <p>1桁の整数値で計算ができます。</p>
-    <p>数値1</p>
-    <button onclick="check(1)">1</button>
-    <button onclick="check(2)">2</button>
-    <button onclick="check(3)">3</button>
-    <button onclick="check(4)">4</button>
-    <button onclick="check(5)">5</button>
-    <button onclick="check(6)">6</button>
-    <button onclick="check(7)">7</button>
-    <button onclick="check(8)">8</button>
-    <button onclick="check(9)">9</button>
-
-    <p>数値2</p>
-    <button onclick="check1(1)">1</button>
-    <button onclick="check1(2)">2</button>
-    <button onclick="check1(3)">3</button>
-    <button onclick="check1(4)">4</button>
-    <button onclick="check1(5)">5</button>
-    <button onclick="check1(6)">6</button>
-    <button onclick="check1(7)">7</button>
-    <button onclick="check1(8)">8</button>
-    <button onclick="check1(9)">9</button>
-
-    <p>演算子</p>
-    <button onclick="check2(1)">+</button>
-    <button onclick="check2(2)">-</button>
-    <button onclick="check2(3)">*</button>
-    <button onclick="check2(4)">/</button>
     <button onclick="calculateResult(1,1,'+')">計算結果を見る</button>
     <div id="message"></div>
 
 <body>
     <script>
-        function check(x){
-            let op1 = x
-        }
-        function check1(y){
-            let op2 = y
-        }
-        function check2(z){
-            switch(z){
-                case 1:
-                    oprator = "+"
-                    break
-                case 2:
-                    oprator = "-"
-                    break
-                case 3:
-                    oprator = "*"
-                    break
-                case 4:
-                    oprator = "/"
-                    break
-            }
-        }
         function calculateResult(op1,op2,oprator){
             let result = 0
             switch(oprator){
