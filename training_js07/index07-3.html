@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>電卓</title>
+</head>
+
+<body>
+    <script>
+        function calculateResult(op1,op2,oprator){
+            let result = 0
+            switch(oprator){
+                case "+":
+                    result = op1+op2
+                    break
+                case "-":
+                    result = op1-op2
+                    break
+                case "*":
+                    result = op1*op2
+                    break
+                case "/":
+                    result = op1/op2
+                    break
+                default:
+                    throw new SyntaxError(
+                        "演算子は「+,-,*,/」の中から選んでください")
+            }
+            return result
+        }
+    </script>
+</body>
+</html>
