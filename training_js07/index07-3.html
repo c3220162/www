@@ -5,6 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>電卓</title>
 </head>
+    <h3>簡易電卓</h3>
+    <p>1桁の整数値で計算ができます。</p>
+    <p>数値1</p>
+    <button onclick="calculateResult(op1)">1</button>
+    <button onclick="calculateResult(op1)">2</button>
+    <button onclick="calculateResult(op1)">3</button>
+    <button onclick="calculateResult(op1)">4</button>
+    <button onclick="calculateResult(op1)">5</button>
+    <button onclick="calculateResult(op1)">6</button>
+    <button onclick="calculateResult(op1)">7</button>
+    <button onclick="calculateResult(op1)">8</button>
+    <button onclick="calculateResult(op1)">9</button>
+    <p>数値2</p>
+    <button onclick="calculateResult(op2)">1</button>
+    <button onclick="calculateResult(op2)">2</button>
+    <button onclick="calculateResult(op2)">3</button>
+    <button onclick="calculateResult(op2)">4</button>
+    <button onclick="calculateResult(op2)">5</button>
+    <button onclick="calculateResult(op2)">6</button>
+    <button onclick="calculateResult(op2)">7</button>
+    <button onclick="calculateResult(op2)">8</button>
+    <button onclick="calculateResult(op2)">9</button>
+    <p>演算子</p>
+    <button onclick="calculateResult(oprator)">+</button>
+    <button onclick="calculateResult(oprator)">-</button>
+    <button onclick="calculateResult(oprator)">*</button>
+    <button onclick="calculateResult(oprator)">/</button>
+    <button onclick="calculateResult()">計算結果を見る</button>
+    <div id="message"></div>
 
 <body>
     <script>
@@ -28,6 +57,7 @@
                         "演算子は「+,-,*,/」の中から選んでください")
             }
             return result
+            document.getElementById('message').textContent = op1 + op2 + oprator + "=" + result
         }
     </script>
 </body>
