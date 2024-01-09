@@ -12,20 +12,23 @@
 <body>
     <script>
         function calculateResult(op1,op2,oprator){
+            let op1 = parseInt(prompt('1桁の数値を入力してください。'))
+            let op2 = parseInt(prompt('1桁の数値を入力してください。'))
+            let oprator = prompt('演算子を入力してください。')
             let result = 0
             switch(oprator){
                 case "+":
-                    result = op1+op2
-                    break
+                    result = op1+op2; 
+                    break;
                 case "-":
-                    result = op1-op2
-                    break
+                    result = op1-op2;
+                    break;
                 case "*":
-                    result = op1*op2
-                    break
+                    result = op1*op2;
+                    break;
                 case "/":
-                    result = op1/op2
-                    break
+                    result = op1/op2;
+                    break;
                 default:
                     throw new SyntaxError(
                         "演算子は「+,-,*,/」の中から選んでください")
