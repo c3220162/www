@@ -4,16 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>今日の挨拶</title>
+<style>
+    #font{
+        width: 400px;
+        font-size: 20px;
+    }
+</style>
 </head>
 <body>
+    <h1>今の時間の挨拶</h1>
+    <div id="font"></div>
     <script>
         function greetings(){
             const today = new Date()
             const hour = today.getHours()
-            if (hour >= 5 && hour < 9) return "おはようございます"
-            else if(hour <= 18) return "こんにちは"
-            else return "こんばんは"
+            if (hour >= 5 && hour < 9) return "おはようございます";
+            else if(hour <= 18) return "こんにちは";
+            else return "こんばんは";
         }
+        document.getElementById('font').textContent ="今の時間の挨拶は、" + greetings() + "です。"
     </script>
 </body>
 </html>
