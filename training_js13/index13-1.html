@@ -32,10 +32,10 @@
                 let flag=check(i);
                 if(flag){
                     let num = i;
-                    document.getElementById('message').textContent = min + '~' + max +'で割り切れる最小の数値は' + num + 'です。'
                     break;
                 }
             }
+            document.getElementById('message').textContent = min + '~' + max +'で割り切れる最小の数値は' + num + 'です。'
         }
         function check(i){
                 for(let j=min; j<=max; j++){
