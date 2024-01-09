@@ -36,7 +36,7 @@
                 }
             }
             document.getElementById('message').textContent = min + '~' + max +'で割り切れる最小の数値は' + num + 'です。'
-        }
+        
         function check(i){
                 for(let j=min; j<=max; j++){
                     if(i%j != 0){
@@ -45,6 +45,7 @@
                 }
                 return true;
         }
+    }
     </script>
 </body>
 </html>
