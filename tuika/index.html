@@ -107,6 +107,7 @@
 
     <script>
         function show(){
+        for(let j=1; j<=10; j++){
             let op1 = Math.floor(Math.random()*11);
             let op2 = Math.floor(Math.random()*11);
             document.getElementById('iti').textContent = op1 + '+' + op2 + '=?'
@@ -118,6 +119,7 @@
             }else{
                 alert('不正解　正解は' + result)
             }
+        }
             document.getElementById('iti').textContent = '正解した問題数　10問中　' + count + '回'
         }
     </script>
