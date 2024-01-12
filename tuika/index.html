@@ -108,52 +108,54 @@
     <script>
         function show(){
         for(let j=1; j<=10; j++){
-            let count = 0
-            let op1 = Math.floor(Math.random()*11);
-            let op2 = Math.floor(Math.random()*11);
-            let result = op1 + op2
-            let ans=parseInt(prompt(op1 + '+' + op2 + '=?'))
-            if(result == ans){
-                alert('正解！')
-                count = count + 1
-                document.getElementById('iti').textContent = '正解した問題数　10問中　' + count + '回'
-                continue;
-            }else{
-                alert('不正解　正解は' + result)
+                let count = 0
+                let op1 = Math.floor(Math.random()*11);
+                let op2 = Math.floor(Math.random()*11);
+                let result = op1 + op2
+                let ans=parseInt(prompt(op1 + '+' + op2 + '=?'))
+                if(result == ans){
+                    alert('正解！')
+                    count = count + 1
+                    document.getElementById('iti').textContent = '正解した問題数　10問中　' + count + '回'
+                    continue;
+                }else{
+                    alert('不正解　正解は' + result)
+                    document.getElementById('iti').textContent = '正解した問題数　10問中　' + count + '回'
             }
         }
         }
         function show1(){
             for(let j=1; j<=10; j++){
-            let op3 = Math.floor(Math.random()*110);
-            let op4 = Math.floor(Math.random()*110);
-            let result=op3+op4
-            let ans=parseInt(prompt(op3 + '+' + op4 + '=?'))
-            if(result==ans){
-                alert('正解！')
-                count=count+1
-                document.getElementById('ni').textContent = '正解した問題数　10問中　' + count + '回'
-                continue;
-            }else{
-                alert('不正解　正解は' + result)
+                let op3 = Math.floor(Math.random()*110);
+                let op4 = Math.floor(Math.random()*110);
+                let result=op3+op4
+                let ans=parseInt(prompt(op3 + '+' + op4 + '=?'))
+                if(result==ans){
+                    alert('正解！')
+                    count=count+1
+                    document.getElementById('ni').textContent = '正解した問題数　10問中　' + count + '回'
+                    continue;
+                }else{
+                    alert('不正解　正解は' + result)
+                    document.getElementById('iti').textContent = '正解した問題数　10問中　' + count + '回'
             }
-            }
-            
+            }         
         }
         function show2(){
             for(let j=1; j<=10; j++){
-            let op5 = Math.floor(Math.random()*1100);
-            let op6 = Math.floor(Math.random()*1100);
-            let result=op5+op6
-            let ans=parseInt(prompt(op5 + '+' + op6 + '=?'))
-            if(result==ans){
-                alert('正解！')
-                count=count+1
-                document.getElementById('iti').textContent = '正解した問題数　10問中　' + count + '回'
-                continue;
-            }else{
-                alert('不正解　正解は' + result)
-            }
+                let op5 = Math.floor(Math.random()*1100);
+                let op6 = Math.floor(Math.random()*1100);
+                let result=op5+op6
+                let ans=parseInt(prompt(op5 + '+' + op6 + '=?'))
+                if(result==ans){
+                    alert('正解！')
+                    count=count+1
+                    document.getElementById('iti').textContent = '正解した問題数　10問中　' + count + '回'
+                    continue;
+                }else{
+                    alert('不正解　正解は' + result)
+                    document.getElementById('iti').textContent = '正解した問題数　10問中　' + count + '回'
+                }
             }
         }
     </script>
