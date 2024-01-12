@@ -109,7 +109,16 @@
         function show(){
             let op1 = Math.floor(Math.random()*11);
             let op2 = Math.floor(Math.random()*11);
-            document.getElementById('iti').textContent = op1 + '+' + op2 + '= ?'
+            document.getElementById('iti').textContent = op1 + '+' + op2 + '=?'
+            let result = op1 + op2
+            let ans=parseInt(prompt('答えを半角数字で入力してください。'))
+            if(result == ans){
+                alert('正解！')
+                let count = count + 1
+            }else{
+                alert('不正解　正解は' + result)
+            }
+            document.getElementById('iti').textContent = '正解した問題数　10問中　' + count + '回'
         }
     </script>
 </body>
