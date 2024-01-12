@@ -108,13 +108,14 @@
     <script>
         function show(){
         for(let j=1; j<=10; j++){
+            let count = 0
             let op1 = Math.floor(Math.random()*11);
             let op2 = Math.floor(Math.random()*11);
             let result = op1 + op2
             let ans=parseInt(prompt(op1 + '+' + op2 + '=?'))
             if(result == ans){
                 alert('正解！')
-                let count = count + 1
+                count = count + 1
                 continue;
             }else{
                 alert('不正解　正解は' + result)
