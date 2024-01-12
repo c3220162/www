@@ -150,6 +150,8 @@
                     count=count+1
                     document.getElementById('ni').textContent = '正解した問題数　10問中　' + count + '回'
                     continue;
+                }else if(end==ans){
+                    break;
                 }else{
                     alert('不正解　正解は' + result)
                     document.getElementById('ni').textContent = '正解した問題数　10問中　' + count + '回'
