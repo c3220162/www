@@ -109,7 +109,7 @@
         <div class="contents">
             <p>かなり難しい問題が出題されます。</p>
             <p>最高難易度！これが解けたらすごい！！</p>
-            <p>1桁から4桁までの足し算</p>
+            <p>1桁から3桁までの足し算</p>
             <div id="san">ここに成績が表示されます。</div>
             <button onclick="show2()">上級コースを始める</button>
         </div>
@@ -138,8 +138,8 @@
         function show1(){
             let count=0
             for(let j=1; j<=10; j++){
-                let op3 = Math.floor(Math.random()*110);
-                let op4 = Math.floor(Math.random()*110);
+                let op3 = Math.floor(Math.random()*100);
+                let op4 = Math.floor(Math.random()*100);
                 let result=op3+op4
                 let ans=parseInt(prompt(op3 + '+' + op4 + '=?'))
                 if(result==ans){
@@ -156,8 +156,8 @@
         function show2(){
             let count=0
             for(let j=1; j<=10; j++){
-                let op5 = Math.floor(Math.random()*1100);
-                let op6 = Math.floor(Math.random()*1100);
+                let op5 = Math.floor(Math.random()*1000);
+                let op6 = Math.floor(Math.random()*1000);
                 let result=op5+op6
                 let ans=parseInt(prompt(op5 + '+' + op6 + '=?'))
                 if(result==ans){
