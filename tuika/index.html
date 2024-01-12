@@ -107,33 +107,30 @@
 
     <script>
         function show(){
-            let op1 = Math.floor(Math.random()*11);
-            let op2 = Math.floor(Math.random()*11);          
         for(let j=1; j<=10; j++){
-            document.getElementById('iti').textContent = op1 + '+' + op2 + '=?'
+            let op1 = Math.floor(Math.random()*11);
+            let op2 = Math.floor(Math.random()*11);
             let result = op1 + op2
-            let ans=parseInt(prompt('答えを半角数字で入力してください。'))
+            let ans=parseInt(prompt(op1 + '+' + op2 + '=?'))
             if(result == ans){
                 alert('正解！')
                 let count = count + 1
             }else{
                 alert('不正解　正解は' + result)
             }
-            let op1 = Math.floor(Math.random()*11);
-            let op2 = Math.floor(Math.random()*11);
         }
             document.getElementById('iti').textContent = '正解した問題数　10問中　' + count + '回'
         }
         function show1(){
             let op3 = Math.floor(Math.random()*110);
             let op4 = Math.floor(Math.random()*110);
-            document.getElementById('iti').textContent = op3 + '+' + op4 + '=?'
+            document.getElementById('ni').textContent = op3 + '+' + op4 + '=?'
             let result=op3+op4
         }
         function show2(){
             let op5 = Math.floor(Math.random()*1100);
             let op6 = Math.floor(Math.random()*1100);
-            document.getElementById('iti').textContent = op5 + '+' + op6 + '=?'
+            document.getElementById('san').textContent = op5 + '+' + op6 + '=?'
             let result=op5+op6
         }
     </script>
