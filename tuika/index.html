@@ -8,7 +8,7 @@
     body{
         margin:0;
     }
-    header{
+    .header{
         width:100%;
         text-align:center;
         background-color:#2a5c84;
@@ -16,13 +16,43 @@
         padding: 100px 5px;
         margin: 0px;
     }
+    .main{
+        background-color:cadetblue;
+    }
+    .mokuji{
+        background:white;
+        width:25%;
+        margin:30px auto;
+        padding:10px;
+        border-radius:10px;
+    }
+    .mokuji h3{
+        text-align:center;
+        margin:0;
+    }
+    .mokuji ul{
+        margin:10px 0;
+    }
+    .mokuji a:hover{
+        color:chocolate;
+    }
 </style>
 </head>
 <body>
     <header>
         <h1>クイズに挑戦しよう！！</h1>
-        <p>簡単な問題からの難しい問題まで3つのコースから選べるよ</p>
+        <p>簡単な問題から難しい問題まで3つのコースから選べるよ</p>
         <p>全問正解を目指そう！！</p>
     </header>
+    <main>
+        <div class="mokuji">
+            <h3>目次</h3>
+            <ul>
+                <li>初級コース</li>
+                <li>中級コース</li>
+                <li>上級コース</li>
+            </ul>
+        </div>
+    </main>
 </body>
 </html>
