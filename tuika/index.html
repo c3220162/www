@@ -94,14 +94,14 @@
             <p>一般的な難易度の問題が出題されます。</p>
             <p>手堅く問題を解きたいならこの難易度！！</p>
             <div id="ni">ここに問題が表示されます。</div>
-            <button>中級コースを始める</button>
+            <button onclick="show1()">中級コースを始める</button>
         </div>
         <h2 id="joukyuu">上級コース</h2>
         <div class="contents">
             <p>かなり難しい問題が出題されます。</p>
             <p>最高難易度！これが解けたらすごい！！</p>
             <div id="san">ここに問題が表示されます。</div>
-            <button>上級コースを始める</button>
+            <button onclick="show2()">上級コースを始める</button>
         </div>
     </main>
 
@@ -123,6 +123,12 @@
             let op2 = Math.floor(Math.random()*11);
         }
             document.getElementById('iti').textContent = '正解した問題数　10問中　' + count + '回'
+        }
+        function show1(){
+            let op3 = Math.floor(Math.random()*110);
+            let op4 = Math.floor(Math.random()*110);
+            document.getElementById('iti').textContent = op3 + '+' + op4 + '=?'
+            let result=op3+op4
         }
     </script>
 </body>
