@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,15 +8,8 @@
 <body>
   <script src="https://www.gstatic.com/firebasejs/11.5.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/11.5.0/firebase-firestore-compat.js"></script>
-  <script type="module" src="/index.js"></script>
-  import { firestore } from "./firebase.js";
-window.onload = async () => {
-const value = {
-  birth: 1014,
-  name: "yuuki",
-  createdAt: new Date(),
-};
-await firestore.collection("user").add(value);
-};
+  <script type="module" src="dmeo/index.js"></script>
+  <p>w</p>
 </body>
+
 </html>
