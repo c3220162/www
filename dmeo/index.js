@@ -1,4 +1,5 @@
-import{firestore} from "./firebase.js"
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
 window.onload = async () => {
 const value = {
   birth: 1014,
