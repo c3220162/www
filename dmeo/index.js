@@ -1,17 +1,8 @@
-// app.js
-import db from './firebase';
+import{firestore} from "./firebase.js"
 
-// データをFirestoreに追加
-const addData = async () => {
-  try {
-    await db.collection('users').add({
-      name: 'John Doe',
-      age: 30
-    });
-    console.log('データが追加されました');
-  } catch (error) {
-    console.error('エラー:', error);
-  }
+const value = {
+  birth: 1014,
+  name: "yuuki",
+  createdAt: new Date(),
 };
-
-addData();
+await firestore.collection("user").add(value);
