@@ -48,6 +48,25 @@
      console.log(doc.id, " => ", doc.data());  // ユーザー情報をコンソールに表示
     });
   };
+  import { getFirestore, query, where, getDocs, collection } from "firebase/firestore";
+
+const searchUserByEmail = async (email) => {
+  const q = query(collection(db, "users"), where("email", "==", email));
+  const querySnapshot = await getDocs(q);
+
+  if (querySnapshot.empty) {
+    console.log("ユーザーが見つかりませんでした。");
+  } else {
+    querySnapshot.forEach((doc) => {
+      const userData = doc.data();
+      document.getElementById("userInfo").innerHTML = `
+        <p>名前: ${userData.displayName}</p>
+        <p>メールアドレス: ${userData.email}</p>
+        <p>最終サインイン日時: ${userData.lastSignInTime}</p>
+      `;
+    });
+  }
+};
 
 
     const firebaseConfig = {
