@@ -90,7 +90,7 @@ async function searchUserByEmail() {
                         // 検索結果が見つかった場合、最初のドキュメントを取得
                         const doc = querySnapshot.docs[0];
                         document.getElementById("userInfo").innerText = 
-                            `ユーザー情報:\n名前: ${doc.data().name}\nメール: ${doc.data().email}`;
+                            `名前: ${doc.data().name}\nメール: ${doc.data().email}`;
                     } else {
                         // 検索結果が見つからなかった場合
                         document.getElementById("userInfo").innerText = "メールアドレスに該当するユーザーは見つかりませんでした。";
