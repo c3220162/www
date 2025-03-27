@@ -70,9 +70,8 @@ document.getElementById("addDataForm").addEventListener("submit", (event) => {
 
   // Firestoreにデータを追加
   addDataToFirestore(name, birth, email);
-  
+
   async function searchUser() {
-            const email = document.getElementById("email").value;
             
             // ユーザーIDが入力されている場合のみ実行
             if (email) {
