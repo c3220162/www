@@ -6,50 +6,18 @@
   <title>画像表示</title>
 </head>
 <body>
-  <h1>画像アップロード</h1>
-  <input type="file" id="imageInput" accept="image/*">
-  <button onclick="clearImages()">画像を削除</button>
-  <div id="imageContainer"></div>
+  <h1>アップロードされた画像</h1>
+  <img id="uploadedImage" src="" alt="アップロードされた画像が表示されます" />
 
   <script>
-      // 画像をアップロードして `localStorage` に保存
-      document.getElementById("imageInput").addEventListener("change", function(event) {
-          const file = event.target.files[0];
-          if (file) {
-              const reader = new FileReader();
-              reader.onload = function(e) {
-                  let images = JSON.parse(localStorage.getItem("savedImages")) || []; // 過去のデータ取得
-                  images.push(e.target.result); // 新しい画像追加
-                  localStorage.setItem("savedImages", JSON.stringify(images)); // 更新
-                  displayImages(); // 画面に表示
-              };
-              reader.readAsDataURL(file); // Base64 形式に変換
-          }
-      });
-
-      // `localStorage` の画像を表示
-      function displayImages() {
-          const imageContainer = document.getElementById("imageContainer");
-          imageContainer.innerHTML = ""; // 一度クリア
-          const images = JSON.parse(localStorage.getItem("savedImages")) || [];
-
-          images.forEach(src => {
-              const img = document.createElement("img");
-              img.src = src;
-              img.style.width = "150px"; // サイズ調整
-              img.style.margin = "10px";
-              imageContainer.appendChild(img);
-          });
-      }
-
-      // 画像を削除
-      function clearImages() {
-          localStorage.removeItem("savedImages");
-          displayImages();
-      }
-
-      // ページ読み込み時に画像を表示
-      window.onload = displayImages;
+    // localStorageから画像のURLを取得
+    const imageSrc = localStorage.getItem("imageSrc");
+    if (imageSrc) {
+      // 画像が保存されていたら表示
+      document.getElementById("uploadedImage").src = imageSrc;
+    } else {
+      alert("画像がアップロードされていません。");
+    }
   </script>
 </body>
 </html>
