@@ -76,19 +76,19 @@ document.getElementById("addDataForm").addEventListener("submit", (event) => {
 });
 
 async function searchUser() {
-            const userId = document.getElementById("userId").value;
+            const email = document.getElementById("email").value;
             
             // ユーザーIDが入力されている場合のみ実行
-            if (userId) {
+            if (email) {
                 try {
                     // Firestoreの"users"コレクションからユーザーを検索
-                    const userRef = db.collection("users").doc(userId);
+                    const userRef = db.collection("users").doc(email);
                     const doc = await userRef.get();
                     
                     if (doc.exists) {
                         // ユーザー情報が存在する場合
                         document.getElementById("userInfo").innerText = 
-                            `ユーザー情報:${doc.data().userId}\n名前: ${doc.data().name}\nメール: ${doc.data().email}`;
+                            `名前: ${doc.data().name}\nメール: ${doc.data().email}`;
                     } else {
                         // ユーザーが見つからない場合
                         document.getElementById("userInfo").innerText = "ユーザーが見つかりませんでした。";
