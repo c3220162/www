@@ -82,7 +82,7 @@ async function searchUser() {
             if (email) {
                 try {
                     // Firestoreの"users"コレクションからユーザーを検索
-                    const userRef = db.collection("users").doc(email);
+                    const userRef = db.collection("users").doc.data().email;
                     const doc = await userRef.get();
                     
                     if (doc.exists) {
