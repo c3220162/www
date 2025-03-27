@@ -121,6 +121,8 @@ async function searchUserByEmail() {
           // 読み込んだ画像をlocalStorageに保存
           localStorage.setItem("imageSrc", event.target.result);
           alert("画像がアップロードされました！画像は次のページで表示できます。");
+           // アップロード後、display.htmlにリダイレクト
+           window.location.href = "display.html";
         };
         // 画像をbase64形式で読み込む
         reader.readAsDataURL(file);
