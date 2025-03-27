@@ -71,11 +71,7 @@ document.getElementById("addDataForm").addEventListener("submit", (event) => {
   // Firestoreにデータを追加
   addDataToFirestore(name, birth, email);
   
-  // フォームをリセット
-  event.target.reset();
-});
-
-async function searchUser() {
+  async function searchUser() {
             const email = document.getElementById("email").value;
             
             // ユーザーIDが入力されている場合のみ実行
@@ -101,6 +97,11 @@ async function searchUser() {
                 document.getElementById("userInfo").innerText = "ユーザーIDを入力してください。";
             }
         }
+  // フォームをリセット
+  event.target.reset();
+});
+
+
   </script>
 </body>
 
