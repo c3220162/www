@@ -17,11 +17,36 @@
     <input type="text" id="email" placeholder="email" required>
     <button type="submit">Add Data</button>
   </form>
+  <input type="email" id="email" placeholder="メールアドレスを入力">
+  <button onclick="search()">検索</button>
+
+  <script type="module">
+    import { searchUserByEmail } from "./firebase.js";
+
+    function search() {
+      const email = document.getElementById("email").value;
+      searchUserByEmail(email);
+    }
+  </script>
+
   <script>
     import { getFirestore, setDoc, doc } from "firebase/firestore";
 
   // Firestoreインスタンスの取得
   const db = getFirestore(app);
+
+  import { getFirestore, query, where, getDocs, collection } from "firebase/firestore";
+
+  // ユーザーのメールアドレスで検索
+  const searchUserByEmail = async (email) => {
+    const q = query(collection(db, "users"), where("email", "==", email));
+    const querySnapshot = await getDocs(q);
+
+    querySnapshot.forEach((doc) => {
+     console.log(doc.id, " => ", doc.data());  // ユーザー情報をコンソールに表示
+    });
+  };
+
 
     const firebaseConfig = {
   apiKey: "AIzaSyBI-xiQDIsbQANfGr-xPY_ydslNCr2sgM4",
