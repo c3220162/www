@@ -88,7 +88,7 @@ async function searchUser() {
                     if (doc.exists) {
                         // ユーザー情報が存在する場合
                         document.getElementById("userInfo").innerText = 
-                            `ユーザー情報:\n名前: ${doc.data().name}\nメール: ${doc.data().email}`;
+                            `ユーザー情報:${doc.data().userId}\n名前: ${doc.data().name}\nメール: ${doc.data().email}`;
                     } else {
                         // ユーザーが見つからない場合
                         document.getElementById("userInfo").innerText = "ユーザーが見つかりませんでした。";
