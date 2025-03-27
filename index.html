@@ -110,21 +110,22 @@ async function searchUserByEmail() {
             }
         }
     
-        document.getElementById("uploadBtn").addEventListener("click", async () => {
-      const file = document.getElementById("imageInput").files[0];
-      if (!file) return;
+        document.getElementById("uploadBtn").addEventListener("click", () => {
+      const fileInput = document.getElementById("imageInput");
+      const file = fileInput.files[0]; // 選択されたファイルを取得
 
-      const storageRef = storage.ref().child('images/' + file.name);
-      try {
-        await storageRef.put(file);
-        // 画像がアップロードされた後、URLを取得
-        const imageUrl = await storageRef.getDownloadURL();
-        
-        // URLをlocalStorageに保存して、別のページに渡す
-        localStorage.setItem("imageURL", imageUrl);
-        alert("画像がアップロードされました！別のページで確認できます。");
-      } catch (error) {
-        console.error("アップロードエラー:", error);
+      if (file) {
+        // FileReaderを使って画像を読み込む
+        const reader = new FileReader();
+        reader.onload = function(event) {
+          // 読み込んだ画像をlocalStorageに保存
+          localStorage.setItem("imageSrc", event.target.result);
+          alert("画像がアップロードされました！画像は次のページで表示できます。");
+        };
+        // 画像をbase64形式で読み込む
+        reader.readAsDataURL(file);
+      } else {
+        alert("画像を選択してください。");
       }
     });
   </script>
