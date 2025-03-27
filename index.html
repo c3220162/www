@@ -23,7 +23,6 @@
   <div id="userInfo"></div>
 
   <script type="module">
-    import { searchUserByEmail } from "./firebase.js";
 
     function search() {
       const email = document.getElementById("email").value;
@@ -40,7 +39,7 @@
   import { getFirestore, query, where, getDocs, collection } from "firebase/firestore";
 
   // ユーザーのメールアドレスで検索
-  const searchUserByEmail = async (email) => {
+  　const searchUserByEmail = async (email) => {
     const q = query(collection(db, "users"), where("email", "==", email));
     const querySnapshot = await getDocs(q);
 
@@ -49,10 +48,6 @@
     });
   };
   import { getFirestore, query, where, getDocs, collection } from "firebase/firestore";
-
-const searchUserByEmail = async (email) => {
-  const q = query(collection(db, "users"), where("email", "==", email));
-  const querySnapshot = await getDocs(q);
 
   if (querySnapshot.empty) {
     console.log("ユーザーが見つかりませんでした。");
