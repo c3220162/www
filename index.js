@@ -1,5 +1,5 @@
 import { db } from "./firebase.js";
-window.onload = async () => {
+const main = async () => {
 const value = {
   birth: 1014,
   name: "yuuki",
