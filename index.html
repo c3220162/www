@@ -113,7 +113,21 @@ async function searchUserByEmail() {
                 document.getElementById("userInfo").innerText = "メールアドレスを入力してください。";
             }
         }
-    
+        // 画像選択後のプレビュー表示処理
+    document.getElementById("imageInput").addEventListener("change", function(event) {
+      const file = event.target.files[0]; // 選択されたファイルを取得
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          // プレビュー画像を設定
+          const imagePreview = document.getElementById("imagePreview");
+          imagePreview.src = e.target.result; // 画像のbase64データを設定
+          imagePreview.style.display = "block"; // 画像を表示
+        };
+        reader.readAsDataURL(file); // 画像をbase64形式で読み込む
+      }
+    });
+
         document.getElementById("uploadBtn").addEventListener("click", () => {
       const fileInput = document.getElementById("imageInput");
       const file = fileInput.files[0]; // 選択されたファイルを取得
