@@ -10,6 +10,8 @@
   <div id="uploadedImages"></div>
   <img id="uploadedImage" src="" alt="アップロードされた画像が表示されます" />
   <button onclick="show()">modoru</button>
+  <button onclick="clearImages()">画像を削除</button>
+    <div id="imageContainer"></div>
 
   <script>
     function displayImages() {
@@ -26,7 +28,11 @@
       container.appendChild(img);
     });
   }
-
+    // 画像を削除
+    function clearImages() {
+            localStorage.removeItem("savedImages");
+            displayImages();
+        }
   document.addEventListener("DOMContentLoaded", displayImages);
         function show(){
           window.location.href = "index.html";
