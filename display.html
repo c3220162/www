@@ -8,6 +8,7 @@
 <body>
   <h1>アップロードされた画像</h1>
   <img id="uploadedImage" src="" alt="アップロードされた画像が表示されます" />
+  <button onclick="show()">modoru</button>
 
   <script>
     // localStorageから画像のURLを取得
@@ -46,6 +47,9 @@
                 img.style.margin = "10px";
                 imageContainer.appendChild(img);
             });
+        }
+        function show(){
+          window.location.href = "index.html";
         }
   </script>
 </body>
