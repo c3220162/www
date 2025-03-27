@@ -1,4 +1,4 @@
-import { firestore } from "./firebase.js";
+import { db } from "./firebase.js";
 window.onload = async () => {
 const value = {
   birth: 1014,
