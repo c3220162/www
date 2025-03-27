@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dmeo",
+    "public": "www",
     "ignore": [
       "firebase.json",
       "**/.*",
