@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,13 +19,7 @@
   </form>
 
   <script>
-  // Firebaseアプリの初期化
-  const app = firebase.initializeApp(firebaseConfig);
-
-  // Firestoreインスタンスを取得
-  const db = firebase.firestore(app);
-
-    const firebaseConfig = {
+  const firebaseConfig = {
   apiKey: "AIzaSyBI-xiQDIsbQANfGr-xPY_ydslNCr2sgM4",
   authDomain: "likeest-84e6e.firebaseapp.com",
   projectId: "likeest-84e6e",
@@ -34,6 +28,14 @@
   appId: "1:1000515170120:web:750b6788aefcedcf178d7d",
   measurementId: "G-3DN6RGGTKX"
   };
+
+  // Firebaseアプリの初期化
+  const app = firebase.initializeApp(firebaseConfig);
+
+  // Firestoreインスタンスを取得
+  const db = firebase.firestore(app);
+
+  
 
 // データをFirestoreに追加する関数
 async function addDataToFirestore(name, birth, email) {
