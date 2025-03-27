@@ -17,10 +17,6 @@
     <input type="text" id="email" placeholder="email" required>
     <button type="submit">Add Data</button>
   </form>
-  <input type="email" id="email" placeholder="メールアドレスを入力">
-  <button onclick="search()">検索</button>
-
-  <div id="userInfo"></div>
 
   <script>
   // Firebaseアプリの初期化
@@ -29,33 +25,6 @@
   // Firestoreインスタンスを取得
   const db = firebase.firestore(app);
   import { getFirestore, setDoc, doc } from "firebase/firestore";
- 
-
-  import { getFirestore, query, where, getDocs, collection } from "firebase/firestore";
-
-  // ユーザーのメールアドレスで検索
-    const searchUserByEmail = async (email) => {
-    const q = query(collection(db, "users"), where("email", "==", email));
-    const querySnapshot = await getDocs(q);
-
-    querySnapshot.forEach((doc) => {
-     console.log(doc.id, " => ", doc.data());  // ユーザー情報をコンソールに表示
-    });
-  };
-  import { getFirestore, query, where, getDocs, collection } from "firebase/firestore";
-
-  if (querySnapshot.empty) {
-    <p>ユーザーが見つかりませんでした。</p>
-  } else {
-    querySnapshot.forEach((doc) => {
-      const userData = doc.data();
-      document.getElementById("userInfo").innerHTML = `
-        <p>名前: ${userData.displayName}</p>
-        <p>メールアドレス: ${userData.email}</p>
-        <p>最終サインイン日時: ${userData.lastSignInTime}</p>
-      `;
-    });
-  };
 
 
     const firebaseConfig = {
@@ -98,13 +67,6 @@ document.getElementById("addDataForm").addEventListener("submit", (event) => {
   // フォームをリセット
   event.target.reset();
 });
-  </script>
-  <script type="module">
-
-    function search() {
-      const email = document.getElementById("email").value;
-      searchUserByEmail(email);
-    }
   </script>
 </body>
 
