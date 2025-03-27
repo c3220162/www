@@ -18,6 +18,35 @@
     } else {
       alert("画像がアップロードされていません。");
     }
+     // 画像をアップロードして `localStorage` に保存
+     document.getElementById("imageInput").addEventListener("change", function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    let images = JSON.parse(localStorage.getItem("savedImages")) || []; // 過去のデータ取得
+                    images.push(e.target.result); // 新しい画像追加
+                    localStorage.setItem("savedImages", JSON.stringify(images)); // 更新
+                    displayImages(); // 画面に表示
+                };
+                reader.readAsDataURL(file); // Base64 形式に変換
+            }
+        });
+
+        // `localStorage` の画像を表示
+        function displayImages() {
+            const imageContainer = document.getElementById("imageContainer");
+            imageContainer.innerHTML = ""; // 一度クリア
+            const images = JSON.parse(localStorage.getItem("savedImages")) || [];
+
+            images.forEach(src => {
+                const img = document.createElement("img");
+                img.src = src;
+                img.style.width = "150px"; // サイズ調整
+                img.style.margin = "10px";
+                imageContainer.appendChild(img);
+            });
+        }
   </script>
 </body>
 </html>
