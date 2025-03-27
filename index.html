@@ -19,7 +19,7 @@
   </form>
   <h1>ユーザー情報の検索</h1>
     <!-- ユーザーID入力フォーム -->
-    <input type="text" id="email" placeholder="メールアドレスを入力">
+    <input type="text" id="userId" placeholder="ユーザーIDを入力">
     <button onclick="searchUser()">検索</button>
 
     <div id="result">
@@ -70,20 +70,25 @@ document.getElementById("addDataForm").addEventListener("submit", (event) => {
 
   // Firestoreにデータを追加
   addDataToFirestore(name, birth, email);
+  
+  // フォームをリセット
+  event.target.reset();
+});
 
-  async function searchUser() {
+async function searchUser() {
+            const userId = document.getElementById("userId").value;
             
             // ユーザーIDが入力されている場合のみ実行
-            if (email) {
+            if (userId) {
                 try {
                     // Firestoreの"users"コレクションからユーザーを検索
-                    const userRef = db.collection("users").doc.data(email);
+                    const userRef = db.collection("users").doc(userId);
                     const doc = await userRef.get();
                     
                     if (doc.exists) {
                         // ユーザー情報が存在する場合
                         document.getElementById("userInfo").innerText = 
-                            `名前: ${doc.data().name}\nメール: ${doc.data().email}`;
+                            `ユーザー情報:\n名前: ${doc.data().name}\nメール: ${doc.data().email}`;
                     } else {
                         // ユーザーが見つからない場合
                         document.getElementById("userInfo").innerText = "ユーザーが見つかりませんでした。";
@@ -96,11 +101,6 @@ document.getElementById("addDataForm").addEventListener("submit", (event) => {
                 document.getElementById("userInfo").innerText = "ユーザーIDを入力してください。";
             }
         }
-  // フォームをリセット
-  event.target.reset();
-});
-
-
   </script>
 </body>
 
