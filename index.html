@@ -31,15 +31,18 @@
   </script>
 
   <script>
-    import { getFirestore, setDoc, doc } from "firebase/firestore";
+  // Firebaseアプリの初期化
+  const app = firebase.initializeApp(firebaseConfig);
 
-  // Firestoreインスタンスの取得
+  // Firestoreインスタンスを取得
+  const db = firebase.firestore(app);
+  import { getFirestore, setDoc, doc } from "firebase/firestore";
  
 
   import { getFirestore, query, where, getDocs, collection } from "firebase/firestore";
 
   // ユーザーのメールアドレスで検索
-  　const searchUserByEmail = async (email) => {
+    const searchUserByEmail = async (email) => {
     const q = query(collection(db, "users"), where("email", "==", email));
     const querySnapshot = await getDocs(q);
 
@@ -50,7 +53,7 @@
   import { getFirestore, query, where, getDocs, collection } from "firebase/firestore";
 
   if (querySnapshot.empty) {
-    console.log("ユーザーが見つかりませんでした。");
+    <p>ユーザーが見つかりませんでした。</p>
   } else {
     querySnapshot.forEach((doc) => {
       const userData = doc.data();
@@ -72,12 +75,6 @@
   appId: "1:1000515170120:web:750b6788aefcedcf178d7d",
   measurementId: "G-3DN6RGGTKX"
   };
-
-  // Firebaseアプリの初期化
-  const app = firebase.initializeApp(firebaseConfig);
-
-// Firestoreインスタンスを取得
-const db = firebase.firestore(app);
 
 // データをFirestoreに追加する関数
 async function addDataToFirestore(name, birth, email) {
