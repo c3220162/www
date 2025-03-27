@@ -18,6 +18,11 @@
     <button type="submit">Add Data</button>
   </form>
   <script>
+    import { getFirestore, setDoc, doc } from "firebase/firestore";
+
+  // Firestoreインスタンスの取得
+  const db = getFirestore(app);
+
     const firebaseConfig = {
   apiKey: "AIzaSyBI-xiQDIsbQANfGr-xPY_ydslNCr2sgM4",
   authDomain: "likeest-84e6e.firebaseapp.com",
