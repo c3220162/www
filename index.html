@@ -128,26 +128,26 @@ async function searchUserByEmail() {
       }
     });
 
-        document.getElementById("uploadBtn").addEventListener("click", () => {
-      const fileInput = document.getElementById("imageInput");
-      const file = fileInput.files[0]; // 選択されたファイルを取得
+    document.getElementById("uploadBtn").addEventListener("click", () => {
+    const fileInput = document.getElementById("imageInput");
+    const file = fileInput.files[0]; // 選択されたファイルを取得
 
-      if (file) {
-        // FileReaderを使って画像を読み込む
-        const reader = new FileReader();
-        reader.onload = function(event) {
-          // 読み込んだ画像をlocalStorageに保存
-          localStorage.setItem("imageSrc", event.target.result);
-          alert("画像がアップロードされました！画像は次のページで表示できます。");
-           // アップロード後、display.htmlにリダイレクト
-           window.location.href = "display.html";
-        };
-        // 画像をbase64形式で読み込む
-        reader.readAsDataURL(file);
-      } else {
-        alert("画像を選択してください。");
-      }
-    });
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function(event) {
+        // `localStorage` から既存の画像リストを取得
+        let images = JSON.parse(localStorage.getItem("images")) || [];
+        images.push(event.target.result); // 新しい画像を追加
+        localStorage.setItem("images", JSON.stringify(images)); // `localStorage` に保存
+
+        alert("画像がアップロードされました！画像は次のページで表示できます。");
+        window.location.href = "display.html"; // `display.html` に遷移
+      };
+      reader.readAsDataURL(file);
+    } else {
+      alert("画像を選択してください。");
+    }
+  });
   </script>
 </body>
 
