@@ -13,7 +13,7 @@
   <!-- データ追加用フォーム -->
   <form id="addDataForm">
     <input type="text" id="name" placeholder="Name" required>
-    <input type="number" id="age" placeholder="Age" required>
+    <input type="number" id="birth" placeholder="Birth" required>
     <button type="submit">Add Data</button>
   </form>
   <script>
@@ -34,11 +34,11 @@
 const db = firebase.firestore(app);
 
 // データをFirestoreに追加する関数
-async function addDataToFirestore(name, age) {
+async function addDataToFirestore(name, birth) {
   try {
     const docRef = await db.collection("users").add({
       name: name,
-      age: age
+      birth: birth
     });
     console.log("Document written with ID: ", docRef.id);
   } catch (error) {
@@ -52,10 +52,10 @@ document.getElementById("addDataForm").addEventListener("submit", (event) => {
 
   // フォームの入力値を取得
   const name = document.getElementById("name").value;
-  const age = document.getElementById("age").value;
+  const birth = document.getElementById("birth").value;
 
   // Firestoreにデータを追加
-  addDataToFirestore(name, age);
+  addDataToFirestore(name, birth);
   
   // フォームをリセット
   event.target.reset();
